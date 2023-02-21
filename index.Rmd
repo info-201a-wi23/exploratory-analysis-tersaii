@@ -96,13 +96,9 @@ colnames(orderedUni)[colnames(orderedUni) == "TUITFTE"] = "Net Tuition Revenue"
 
 ### Chart 1
 
-Include a chart
+The chart included is about the average college tuition in different schools. The y-axis is the different school names. The y-axis is the average price of tuition year in U.S. dollars. We also used different colors to differentiate different tuition types in each school.
 
-The chart included is about college tuition.
-
-Describe why you chose this chart and what information it reveals
-
-Here's an example of how to run an R script inside an RMarkdown file:
+We chose this chart because we would like to know the cost of tution in different types of college and the differences between the source of the tuition in each college. This will help us to answer the question: will the cost of attending a college will differ in different types of college and how much will different types of tuition source differ (e.g. will in-state and out-off-state tuition differ extremely?).
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library("tidyr")
