@@ -9,11 +9,11 @@ Give your project a concise, interesting title that summarizes the entirety of y
 
 ### Authors
 
-Names of your team members
+Aadil Ali, Jennifer Feng, Sean Morris, Kevin Ranganbay, Carmen Weatherman
 
 ### Date
 
-Winter 2022
+Winter 2023, Feb 20th
 
 ### Abstract
 
