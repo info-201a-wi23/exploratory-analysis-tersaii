@@ -1,13 +1,20 @@
 library(readr)
-library(ggplot2)
+library(dplyr)
 
 CollegeScorecard <- read_csv("~/exploratory-analysis-tersaii-main/CollegeScorecard.csv")
+universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
+                          , 3849), ]
 
-ggplot(uni, aes(x=TUITIONFEE_IN, y=TUITIONFEE_OUT)) + geom_point() #Example scatterplot with variables
+uni <- subset(universityList,select = c('TUITIONFEE_IN', "TUITIONFEE_OUT", "INSTNM", "PAR_ED_PCT_1STGEN", "GRAD_DEBT_MDN", "RET_FT4", "RET_PT4"))
 
+orderedUni <- uni[,c(3, 1, 2, 5, 6, 7, 4)]
 
-uni <- CollegeScorecard[c(3846, 740, 2327, 2996, 771, 762, 1067, 83, 924              #Uni will be the databse for our 10 universities
-     , 3848), ] 
+orderedUni <- rapply(object = orderedUni, f = round, classes = "numeric", how = "replace", digits = 1)
 
-View(uni)
-View(CollegeScorecard) 
+colnames(orderedUni)[colnames(orderedUni) == "TUITIONFEE_IN"] = "In-State Tuition"
+colnames(orderedUni)[colnames(orderedUni) == "TUITIONFEE_OUT"] = "Out-Of-State Tuition"
+colnames(orderedUni)[colnames(orderedUni) == "INSTNM"] = "University"
+colnames(orderedUni)[colnames(orderedUni) == "PAR_ED_PCT_1STGEN"] = "First Generation"
+colnames(orderedUni)[colnames(orderedUni) == "GRAD_DEBT_MDN"] = "Graduate Student's Debt"
+colnames(orderedUni)[colnames(orderedUni) == "RET_FT4"] = "Full-Time Retention"
+colnames(orderedUni)[colnames(orderedUni) == "RET_PT4"] = "Part-Time Retention"
