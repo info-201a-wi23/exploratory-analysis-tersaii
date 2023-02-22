@@ -1,7 +1,7 @@
 library(readr)
 library(dplyr)
 
-CollegeScorecard <- read_csv("~/exploratory-analysis-tersaii-main/CollegeScorecard.csv")
+CollegeScorecard <- read_csv("Final_Project/exploratory-analysis-tersaii/CollegeScorecard.csv")
 universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
                                      , 3849), ]
 
@@ -18,8 +18,8 @@ ggplot(tuition_type) +
   geom_col(mapping = aes(x = INSTNM, y = cost, fill = t_type),
            position = "dodge") +
   scale_y_continuous(breaks = seq(0, 38000, 2000)) +
-  labs(title ="Average Tuition" , x = "School",
+  labs(title ="Average Tuition and the Revenue Each School Generates" , x = "School",
        y = "Average Price of Tuition/Year in U.S. Dollars") +
-  scale_fill_discrete(name = "Tution Type", labels = c("Revenue Made/Student", "In/Out-of-State Difference",
+  scale_fill_discrete(name = "Tuition Type", labels = c("Revenue Made", "In/Out-of-State Difference",
                                                        "In-State", "Out-of-State", "Program")) +
   guides(x = guide_axis(n.dodge = 5))
