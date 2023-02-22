@@ -5,7 +5,7 @@ output: html_document
 
 ## Balancing College Values and Finding Your Right College
 
-### Aadil Ali, Jennifer Feng, Sean Morris, Kevin Ranganbay, Carmen Weatherman
+### Aadil Ali, Jennifer Feng, Sean Morris, Carmen Weatherman
 
 ### Feb 20th, 2023
 
@@ -80,7 +80,7 @@ library("dplyr")
 library("ggplot2")
 library("readr")
 
-CollegeScorecard <- read_csv("CollegeScorecard.csv")
+CollegeScorecard <- read_csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-tersaii/main/CollegeScorecard.csv")
 uni <- CollegeScorecard[c(3846, 740, 2327, 2996, 771, 762, 1067, 83, 924,3848), ] 
 
 uni <- uni %>% 
@@ -114,7 +114,7 @@ library("ggplot2")
 library("readr")
 library("RColorBrewer")
 
-CollegeScorecard <- read_csv("CollegeScorecard.csv")
+CollegeScorecard <- read_csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-tersaii/main/CollegeScorecard.csv")
 
 universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
                                      , 3849), ]
@@ -140,8 +140,31 @@ ggplot(admissions_ret, aes(x = ADM_RATE, y = RET_FT4, color = INSTNM)) +
 The chart compares different colleges' median student debt in U.S. dollars. The x-axis is the college names, and the y-axis is the values of median student debt in each college. The college with the highest student debt is Georgia State University, and the lowest is the University of Florida. We chose this chart because it is important for prospective college students to know the possible average college debt students will carry during and after college life. Many students really care about how much debt they still have to pay after college. Many students who chose a college with very little funds are still paying debts in their 40s and 50s. So it is important to know the average student debt for the college the prospective students are going to attend.
 
 
+``````{r echo=FALSE, warning=FALSE, message=FALSE}
+library("tidyr")
+library("dplyr")
+library("ggplot2")
+library("readr")
+library("RColorBrewer")
 
-``````{r, echo = FALSE, code = readLines("debt_chart.R")}
+CollegeScorecard <- read_csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-tersaii/main/CollegeScorecard.csv")
+
+
+universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
+                                     , 3849), ]
+
+grad_debt <- universityList %>% 
+  select("INSTNM", "GRAD_DEBT_MDN")
+
+ggplot(grad_debt, aes(x=INSTNM, y=GRAD_DEBT_MDN)) +
+  geom_point(size=5) +
+  geom_segment(aes(x=INSTNM, xend=INSTNM, y=0, yend=GRAD_DEBT_MDN)) +
+  labs(title = "Student Debt from each College",
+       x = "College",
+       y = "Median Debt in U.S. Dollars"
+    
+  ) +
+  scale_x_discrete(guide = guide_axis(n.dodge=5))
 ```
 
 
