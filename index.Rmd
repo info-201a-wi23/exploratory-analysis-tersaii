@@ -70,7 +70,16 @@ Include a table of aggregate information
 
 Describe why you included the table and what information it reveals
 
-`````````{r, echo = FALSE, code = read.table("UniversityDF.R)}
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+install.packages('knitr', dependencies = TRUE)
+
+library(knitr)
+
+my_data <- read_csv("UniversityDF.R")
+
+# Display the data as a table
+kable(my_data)
 ```
 
 ### Chart 1
@@ -108,11 +117,37 @@ ggplot(tuition_type) +
 
 ### Chart 2
 
-Include a chart
-
 Describe why you chose this chart and what information it reveals
 
+The chart is about the correlation between Admission Rates and Retention Rates at each college. The x-axis is the college admission rate, and the y-axis is the retention rate. Each college represents a different college. We chose this chart because the student can foresee the retention rate for the college they picked and compare it with its admission rate (since usually admission rate represents a college's prestigiousness). For instance, if a student chooses a college with a low admission rate, however, it has a very high retention rate. It means it might not be worth it for students to go to that college because there might be a reason the students in that school chose to drop out that caused the retention rate to be high.
 
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library("tidyr")
+library("dplyr")
+library("ggplot2")
+library("readr")
+library("RColorBrewer")
+
+CollegeScorecard <- read_csv("CollegeScorecard.csv")
+
+universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
+                                     , 3849), ]
+
+admissions_ret <- universityList %>% 
+  select("INSTNM", "ADM_RATE", "RET_FT4")
+   
+data_type <- admissions_ret[c(2,3)]
+
+ggplot(admissions_ret, aes(x = ADM_RATE, y = RET_FT4, color = INSTNM)) +
+  geom_point(size=6) +
+  scale_color_brewer(palette = "Paired") +
+  labs(title = "Admission Rates vs. Retention Rates at each college",
+       x = "Admission Rate",
+       y = "Retention Rate",
+       color = "Colleges"
+  ) +
+  scale_x_continuous(breaks = seq(0, 1, 0.1))
+```
 
 ### Chart 3
 
