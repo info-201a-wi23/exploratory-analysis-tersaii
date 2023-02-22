@@ -4,7 +4,7 @@ library("ggplot2")
 library("readr")
 library("RColorBrewer")
 
-CollegeScorecard <- read_csv("Final_Project/exploratory-analysis-tersaii/CollegeScorecard.csv")
+CollegeScorecard <- read_csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-tersaii/main/CollegeScorecard.csv")
 
 
 universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
