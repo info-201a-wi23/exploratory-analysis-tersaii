@@ -72,14 +72,8 @@ Describe why you included the table and what information it reveals
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-install.packages('knitr', dependencies = TRUE)
 
-library(knitr)
 
-my_data <- read_csv("UniversityDF.R")
-
-# Display the data as a table
-kable(my_data)
 ```
 
 ### Chart 1
