@@ -5,7 +5,7 @@ output: html_document
 
 ## Project title
 
-Give your project a concise, interesting title that summarizes the entirety of your project
+Balancing College Values and Finding Your Right College
 
 ### Authors
 
@@ -13,42 +13,52 @@ Aadil Ali, Jennifer Feng, Sean Morris, Kevin Ranganbay, Carmen Weatherman
 
 ### Date
 
-Winter 2023, Feb 20th
+Feb 20th, 2023
 
 ### Abstract
 
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+Our main question is How can students find a balance between quality of life, career alignment, and financial alignment when looking at colleges to apply to? This question is important because many students often struggle with finding a college that will meet their needs, and often suffer from more student debt and career changes as a result. To address the question, we will be analyzing the CollegeScorecard US College Graduation and Opportunity dataset provided by The Devastator on Kaggle, which will provide us with enough raw data to find relationships between factors that affect the balance in question.
 
 ### Keywords
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+Keywords: College; Quality of Life; Student Debt; Career Goals; Financial Management
 
-### Introduction  
+### Introduction
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+Finding the right college proves to be a challenge for many, not just out of preference, but out of necessity. While some try to find a college that will align with their personal interests, others must find colleges that they’ll be able to afford or that will support their values. Recognizing this struggle, we were curious to dig deeper and find a dataset that would help us to answer a couple of questions: Does the cost of attending a college correspond with its post-graduate earnings? How does the cost of attendance vary by state/region? Do various quality of life/diversity traits (student support, first-generation student population, race, family income) correspond with the retention rate of students at a college past their first year? Finally, does the admission rate of a university have any correlation with the average family income of the students attending it, and can this correlation have a difference between public and private schools? Our motivation for finding answers to these questions lie in our collective empathy towards the struggle of finding a college that will help a student pursue their career goals and align with their quality of life needs while keeping themselves in a financially manageable position after graduation. By providing students with a platform that will allow them to review these statistics, we feel we could help them to better understand which college is right for them before committing.
 
 ### Related Work  
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+There exist numerous resources providing people who are exploring college options with advice for what specifically to look at and what process to follow in this search. Many are overviews of the entire process with many steps and general pieces of advice such as Source A. This article includes a couple links to helpful tools, but many of its statistics are overly broad, spanning the whole U.S., and its descriptions of how to find information often stop short at talking to an advisor. Some steps it lists as important are less accessible than assumed such as traveling to campuses, applying to schools with application fees, and even meeting with a counselor. Other resources consist of lists of schools sorted by one important feature to give students a sense of which schools are very good or very bad in terms of this feature. Source B ranks 25 colleges with the highest student-reported quality of life according to their calculations. Source C contains a list of the 10 schools that, on average, leave its alumni with the greatest amount of debt. All these sources make use of very broad averages, and the lists focus only on one area of interest. Data that considers multiple factors in comparing schools with a focus on topics most relevant to potential students with less access to resources while still considering quality of life could be used to create a very useful resource.
+
+References: Epps, T. (2022, December 13). How to Choose a College. BestColleges.com. Retrieved February 2, 2023, from https://www.bestcolleges.com/blog/how-to-choose-the-right-college/
+
+Best quality of life. Best Quality of Life Colleges | The Princeton Review. (n.d.). Retrieved February 3, 2023, from https://www.princetonreview.com/college-rankings?rankings=best-quality-life
+
+Moody, J. (2021, February 24). 10 Colleges Where Graduates Have the Most Debt. U.S. News. Retrieved February 2, 2023, from https://www.usnews.com/education/best-colleges/the-short-list-college/articles/colleges-where-graduates-have-the-most-debt
 
 ### The Dataset
 
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+We’re using the CollegeScorecard US College Graduation and Opportunity dataset created by Noah Rippner. The data used for this set was collected from the U.S Department of Education, using both qualitative and quantitative methods. The author collected this dataset because he wanted to allow future college students to better distinguish school options and be able to find their best fitted college. There are 1952 observations (rows) and 13 features (columns) in our dataset. We will avoid using the data related to crimes in our dataset. These data might not be accurate and might illude and cause bias to students to choose their desired colleges. One possible limitation of this data is that the data pool is massive, and the data may vary in different years based on that year's socioeconomic condition. For example, the Covid pandemic influenced the admission rate to colleges. Many students choose to gap 1 or 2 years until getting back in college; this results in a higher admission rate to some prestigious schools since they need a certain number of students for that school year to make sure they get enough funds to get the college functioning. Furthermore, this dataset is from 2013 to 2015; hence, it will not provide up-to-date data to potential college students. Moreover, the covid pandemic prospers online education, and many students choose that path instead of traditional college, the more expensive option. In the economic aspect, because of the recent year's economic depression, federal funds might get reduced, and the cost of going to college might be more expensive. As a butterfly effect, some students might apply for more student debt or choose to go to community colleges first. Under these scenarios, it would be hard for potential college students to find their best-suited college by just using the data from one of the years.
 
 ### Implications
 
 Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
 
+Looking at the implications of our project, we noticed a wide range of possibilities. A consensus is that there will be a potential decrease in college applications on the lower end of the data due to the recent year’s Covid pandemic. Policymakers could lower the cost of tuition if post-graduate earnings and the cost of tuition are correlated. For universities that are losing applicants, admissions could allocate money towards marketing, specifically printed materials, social media, and alums, to target more prospects who are likely to apply. The admissions could also find ways to streamline the admissions process. Technologists and Designers could use our information to target lower-income areas by improving their online programs. By learning the data about admission and the desired values students seek in the on-site college experience, they will be able to iterate their e-education system and potentially gain more students. Lastly, according to our data, top-ranking universities would bump up their rankings even more, causing a lower acceptance rate due to a more extensive application pool.
+
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+
+When taking a look at the challenges & limitations of this project, we tried to dig deep into the data set itself and see how information was collected. What we found was that one of the main points of our project, which was the financial aspects of going to college, can be easily misinterpreted by our users. There are too many variables to list, but one example can be seen when we take a look at how the Revenue/Cost of the School is calculated by taking the tuition revenue minus discounts and allowances but then it only divides by full-time students (Undergraduate + Graduate).
+
+For starters, it has no consideration from students that are going part-time. For some schools, that could be a large population of students. This could lead to inaccurate perceptions of the data by the user.
+
+Secondly, although this project can be applied in much larger scopes in the sense that this data can also be useful for universities, companies, and brands, we are currently only looking to create a system for students that are looking for schools to apply to. This begs the question of “Does the fact that graduate students are included in this data devalue this information for our user?”.
+
+Lastly, as aforementioned above, this data can be molded and presented in a way that can be useful for not only students but also universities that are trying to see where they are great and where they lack, companies that are trying to target graduating students for job opportunities, and also brands that are looking to market towards university students. The reason we mention that is because our main limitation in maximizing the potential of this project is time.
+Creating this database and interactive models even for just one group of users (students), is going to take some time.
+
+It will be a challenge to create a final project that our team can proudly stand behind within a short amount of time. Cleaning the data, making sure there is correlation along with causation when we present the data, and creating an interface that is easy to use are all important and detail-oriented jobs.
 
 ### Summary Information
 
@@ -60,15 +70,61 @@ Include a table of aggregate information
 
 Describe why you included the table and what information it reveals
 
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+library(dplyr)
+
+CollegeScorecard <- read.csv("~/Desktop/exploratory-analysis-tersaii-main/CollegeScorecard.csv")
+universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
+                          , 3849), ]
+
+uni <- subset(universityList,select = c('TUITIONFEE_IN', "TUITIONFEE_OUT", "INSTNM", "PAR_ED_PCT_1STGEN", "GRAD_DEBT_MDN", "RET_FT4", "RET_PT4", "TUITFTE"))
+
+orderedUni <- uni[,c(3, 1, 2, 5, 8, 6, 7, 4)]
+
+orderedUni <- rapply(object = orderedUni, f = round, classes = "numeric", how = "replace", digits = 1)
+
+colnames(orderedUni)[colnames(orderedUni) == "TUITIONFEE_IN"] = "In-State Tuition"
+colnames(orderedUni)[colnames(orderedUni) == "TUITIONFEE_OUT"] = "Out-Of-State Tuition"
+colnames(orderedUni)[colnames(orderedUni) == "INSTNM"] = "University"
+colnames(orderedUni)[colnames(orderedUni) == "PAR_ED_PCT_1STGEN"] = "First Generation"
+colnames(orderedUni)[colnames(orderedUni) == "GRAD_DEBT_MDN"] = "Graduate Student's Debt"
+colnames(orderedUni)[colnames(orderedUni) == "RET_FT4"] = "Full-Time Retention"
+colnames(orderedUni)[colnames(orderedUni) == "RET_PT4"] = "Part-Time Retention"
+colnames(orderedUni)[colnames(orderedUni) == "TUITFTE"] = "Net Tuition Revenue"
+```
+
 ### Chart 1
 
-Include a chart
+The chart included is about the average college tuition in different schools. The y-axis is the different school names. The y-axis is the average price of tuition year in U.S. dollars. We also used different colors to differentiate different tuition types in each school.
 
-Describe why you chose this chart and what information it reveals
+We chose this chart because we would like to know the cost of tution in different types of college and the differences between the source of the tuition in each college. This will help us to answer the question: will the cost of attending a college will differ in different types of college and how much will different types of tuition source differ (e.g. will in-state and out-off-state tuition differ extremely?).
 
-Here's an example of how to run an R script inside an RMarkdown file:
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library("tidyr")
+library("dplyr")
+library("ggplot2")
+library("readr")
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+CollegeScorecard <- read_csv("CollegeScorecard.csv")
+uni <- CollegeScorecard[c(3846, 740, 2327, 2996, 771, 762, 1067, 83, 924,3848), ] 
+
+uni <- uni %>% 
+  mutate("TUITION_DIFF" = TUITIONFEE_OUT - TUITIONFEE_IN)
+
+tuition_type <- uni %>%
+  select(INSTNM, TUITIONFEE_IN, TUITIONFEE_OUT, TUITION_DIFF, TUITIONFEE_PROG, TUITFTE) %>% 
+  gather(key = "t_type", value = "cost", -INSTNM)
+
+ggplot(tuition_type) +
+  geom_col(mapping = aes(x = INSTNM, y = cost, fill = t_type),
+           position = "dodge") +
+  scale_y_continuous(breaks = seq(0, 38000, 2000)) +
+  labs(title ="Average Tuition" , x = "School",
+       y = "Average Price of Tuition/Year in U.S. Dollars") +
+  scale_fill_discrete(name = "Tution Type", labels = c("Revenue Made/Student", "In/Out-of-State Difference",
+                      "In-State", "Out-of-State", "Program")) +
+  guides(x = guide_axis(n.dodge = 5))
 ```
 
 ### Chart 2
