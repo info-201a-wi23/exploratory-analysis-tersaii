@@ -65,7 +65,20 @@ Include a table of aggregate information
 Describe why you included the table and what information it reveals
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+library(dplyr)
 
+CollegeScorecard <- read_csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-tersaii/main/CollegeScorecard.csv")
+universityList <- CollegeScorecard[c(
+  3847, 741, 2328, 2997, 772, 763, 1068, 84, 925,
+  3849
+), ]
+
+uni <- universityList %>%
+  select("INSTNM", "TUITIONFEE_IN", "TUITIONFEE_OUT", "PAR_ED_PCT_1STGEN", "GRAD_DEBT_MDN", "RET_FT4", "TUITFTE") %>%
+  group_by(INSTNM)
+
+knitr::kable(uni, "pipe", col.name = c("School Name", "In-State Tuition", "Out-Of-State Tuition", "Amount of First-Gen Students", "Median Post-Graduation Debt", "Retention Rate", "Revenue earned"))
 ```
 
 ### Chart 1
