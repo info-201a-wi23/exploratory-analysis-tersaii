@@ -62,7 +62,7 @@ It will be a challenge to create a final project that our team can proudly stand
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+We included the Max and Min full-time retention rate and the universities with it (4 values here). The max full-time retention rate is "1" from the University of Florida, while the minimum is "0.8" from Florida International University, Arizona State University - Temple, and Georgia State University. We also included the Max and Min first generation rate's universities' names (2 values here). The university with the max first-generation rate is Florida International University, while the university with the min first-generation rate is the University of Illinois at Urbana-Champaign. As the first generation rate is part of the factor that we value college's diversity, with these 6 values, we are able to answer part of the research question: Do various quality of diversity traits correspond with the retention rate of students at a college? Also, paring with other data, these values will be able to give us a better overview of the individual colleges, therefore providing the prospective students a clearer outline to find the college that will align with their personal interests.
 
 ### Table
 
@@ -70,28 +70,7 @@ Include a table of aggregate information
 
 Describe why you included the table and what information it reveals
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-library(readr)
-library(dplyr)
-
-CollegeScorecard <- read.csv("~/Desktop/exploratory-analysis-tersaii-main/CollegeScorecard.csv")
-universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
-                          , 3849), ]
-
-uni <- subset(universityList,select = c('TUITIONFEE_IN', "TUITIONFEE_OUT", "INSTNM", "PAR_ED_PCT_1STGEN", "GRAD_DEBT_MDN", "RET_FT4", "RET_PT4", "TUITFTE"))
-
-orderedUni <- uni[,c(3, 1, 2, 5, 8, 6, 7, 4)]
-
-orderedUni <- rapply(object = orderedUni, f = round, classes = "numeric", how = "replace", digits = 1)
-
-colnames(orderedUni)[colnames(orderedUni) == "TUITIONFEE_IN"] = "In-State Tuition"
-colnames(orderedUni)[colnames(orderedUni) == "TUITIONFEE_OUT"] = "Out-Of-State Tuition"
-colnames(orderedUni)[colnames(orderedUni) == "INSTNM"] = "University"
-colnames(orderedUni)[colnames(orderedUni) == "PAR_ED_PCT_1STGEN"] = "First Generation"
-colnames(orderedUni)[colnames(orderedUni) == "GRAD_DEBT_MDN"] = "Graduate Student's Debt"
-colnames(orderedUni)[colnames(orderedUni) == "RET_FT4"] = "Full-Time Retention"
-colnames(orderedUni)[colnames(orderedUni) == "RET_PT4"] = "Part-Time Retention"
-colnames(orderedUni)[colnames(orderedUni) == "TUITFTE"] = "Net Tuition Revenue"
+`````````{r, echo = FALSE, code = read.table("UniversityDF.R)}
 ```
 
 ### Chart 1
@@ -132,6 +111,8 @@ ggplot(tuition_type) +
 Include a chart
 
 Describe why you chose this chart and what information it reveals
+
+
 
 ### Chart 3
 
