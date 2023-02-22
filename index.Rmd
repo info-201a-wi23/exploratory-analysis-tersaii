@@ -3,17 +3,11 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 
-## Project title
+## Balancing College Values and Finding Your Right College
 
-Balancing College Values and Finding Your Right College
+### Aadil Ali, Jennifer Feng, Sean Morris, Kevin Ranganbay, Carmen Weatherman
 
-### Authors
-
-Aadil Ali, Jennifer Feng, Sean Morris, Kevin Ranganbay, Carmen Weatherman
-
-### Date
-
-Feb 20th, 2023
+### Feb 20th, 2023
 
 ### Abstract
 
@@ -21,7 +15,7 @@ Our main question is How can students find a balance between quality of life, ca
 
 ### Keywords
 
-Keywords: College; Quality of Life; Student Debt; Career Goals; Financial Management
+College; Quality of Life; Student Debt; Career Goals; Financial Management
 
 ### Introduction
 
@@ -113,7 +107,7 @@ ggplot(tuition_type) +
 
 Describe why you chose this chart and what information it reveals
 
-The chart is about the correlation between Admission Rates and Retention Rates at each college. The x-axis is the college admission rate, and the y-axis is the retention rate. Each college represents a different college. We chose this chart because the student can foresee the retention rate for the college they picked and compare it with its admission rate (since usually admission rate represents a college's prestigiousness). For instance, if a student chooses a college with a low admission rate, however, it has a very high retention rate. It means it might not be worth it for students to go to that college because there might be a reason the students in that school chose to drop out that caused the retention rate to be high.
+The chart is about the correlation between Admission Rates and Retention Rates at each college. The x-axis is the college admission rate, and the y-axis is the retention rate. Each college represents a different college. We chose this chart because the student can foresee the retention rate for the college they picked and compare it with its admission rate (since usually admission rate represents a college's prestigiousness). For instance, if a student chooses a college with a low admission rate, however, it has a very high retention rate (e.g. University of Texas, Austin). It means it might not be worth it for students to go to that college because there might be a reason the students in that school chose to drop out that caused the retention rate to be high.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library("tidyr")
@@ -145,6 +139,31 @@ ggplot(admissions_ret, aes(x = ADM_RATE, y = RET_FT4, color = INSTNM)) +
 
 ### Chart 3
 
-Include a chart
+The chart compares different colleges' median student debt in U.S. dollars. The x-axis is the college names, and the y-axis is the values of median student debt in each college. The college with the highest student debt is Georgia State University, and the lowest is the University of Florida. We chose this chart because it is important for prospective college students to know the possible average college debt students will carry during and after college life. Many students really care about how much debt they still have to pay after college. Many students who chose a college with very little funds are still paying debts in their 40s and 50s. So it is important to know the average student debt for the college the prospective students are going to attend.
 
-Describe why you chose this chart and what information it reveals
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library("tidyr")
+library("dplyr")
+library("ggplot2")
+library("readr")
+library("RColorBrewer")
+
+CollegeScorecard <- read_csv("CollegeScorecard.csv")
+
+
+universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
+                                     , 3849), ]
+
+grad_debt <- universityList %>% 
+  select("INSTNM", "GRAD_DEBT_MDN")
+
+ggplot(grad_debt, aes(x=INSTNM, y=GRAD_DEBT_MDN)) +
+  geom_point(size=5) +
+  geom_segment(aes(x=INSTNM, xend=INSTNM, y=0, yend=GRAD_DEBT_MDN)) +
+  labs(title = "Student Debt from each College",
+       x = "College",
+       y = "Median Debt in U.S. Dollars"
+    
+  ) +
+  scale_x_discrete(guide = guide_axis(n.dodge=5)) 
+```
