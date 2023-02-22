@@ -3,25 +3,23 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 
-## Balancing College Values and Finding Your Right College
-
-### Aadil Ali, Jennifer Feng, Sean Morris, Carmen Weatherman
+### Learning more about college demographics: Aadil Ali, Jennifer Feng, Sean Morris, Carmen Weatherman
 
 ### Feb 20th, 2023
 
-### Abstract
+## Abstract
 
 Our main question is How can students find a balance between quality of life, career alignment, and financial alignment when looking at colleges to apply to? This question is important because many students often struggle with finding a college that will meet their needs, and often suffer from more student debt and career changes as a result. To address the question, we will be analyzing the CollegeScorecard US College Graduation and Opportunity dataset provided by The Devastator on Kaggle, which will provide us with enough raw data to find relationships between factors that affect the balance in question.
 
-### Keywords
+## Keywords
 
 College; Quality of Life; Student Debt; Career Goals; Financial Management
 
-### Introduction
+## Introduction
 
 Finding the right college proves to be a challenge for many, not just out of preference, but out of necessity. While some try to find a college that will align with their personal interests, others must find colleges that they’ll be able to afford or that will support their values. Recognizing this struggle, we were curious to dig deeper and find a dataset that would help us to answer a couple of questions: Does the cost of attending a college correspond with its post-graduate earnings? How does the cost of attendance vary by state/region? Do various quality of life/diversity traits (student support, first-generation student population, race, family income) correspond with the retention rate of students at a college past their first year? Finally, does the admission rate of a university have any correlation with the average family income of the students attending it, and can this correlation have a difference between public and private schools? Our motivation for finding answers to these questions lie in our collective empathy towards the struggle of finding a college that will help a student pursue their career goals and align with their quality of life needs while keeping themselves in a financially manageable position after graduation. By providing students with a platform that will allow them to review these statistics, we feel we could help them to better understand which college is right for them before committing.
 
-### Related Work  
+## Related Work  
 
 There exist numerous resources providing people who are exploring college options with advice for what specifically to look at and what process to follow in this search. Many are overviews of the entire process with many steps and general pieces of advice such as Source A. This article includes a couple links to helpful tools, but many of its statistics are overly broad, spanning the whole U.S., and its descriptions of how to find information often stop short at talking to an advisor. Some steps it lists as important are less accessible than assumed such as traveling to campuses, applying to schools with application fees, and even meeting with a counselor. Other resources consist of lists of schools sorted by one important feature to give students a sense of which schools are very good or very bad in terms of this feature. Source B ranks 25 colleges with the highest student-reported quality of life according to their calculations. Source C contains a list of the 10 schools that, on average, leave its alumni with the greatest amount of debt. All these sources make use of very broad averages, and the lists focus only on one area of interest. Data that considers multiple factors in comparing schools with a focus on topics most relevant to potential students with less access to resources while still considering quality of life could be used to create a very useful resource.
 
@@ -31,17 +29,15 @@ Best quality of life. Best Quality of Life Colleges | The Princeton Review. (n.d
 
 Moody, J. (2021, February 24). 10 Colleges Where Graduates Have the Most Debt. U.S. News. Retrieved February 2, 2023, from https://www.usnews.com/education/best-colleges/the-short-list-college/articles/colleges-where-graduates-have-the-most-debt
 
-### The Dataset
+## The Dataset
 
 We’re using the CollegeScorecard US College Graduation and Opportunity dataset created by Noah Rippner. The data used for this set was collected from the U.S Department of Education, using both qualitative and quantitative methods. The author collected this dataset because he wanted to allow future college students to better distinguish school options and be able to find their best fitted college. There are 1952 observations (rows) and 13 features (columns) in our dataset. We will avoid using the data related to crimes in our dataset. These data might not be accurate and might illude and cause bias to students to choose their desired colleges. One possible limitation of this data is that the data pool is massive, and the data may vary in different years based on that year's socioeconomic condition. For example, the Covid pandemic influenced the admission rate to colleges. Many students choose to gap 1 or 2 years until getting back in college; this results in a higher admission rate to some prestigious schools since they need a certain number of students for that school year to make sure they get enough funds to get the college functioning. Furthermore, this dataset is from 2013 to 2015; hence, it will not provide up-to-date data to potential college students. Moreover, the covid pandemic prospers online education, and many students choose that path instead of traditional college, the more expensive option. In the economic aspect, because of the recent year's economic depression, federal funds might get reduced, and the cost of going to college might be more expensive. As a butterfly effect, some students might apply for more student debt or choose to go to community colleges first. Under these scenarios, it would be hard for potential college students to find their best-suited college by just using the data from one of the years.
 
-### Implications
-
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
+## Implications
 
 Looking at the implications of our project, we noticed a wide range of possibilities. A consensus is that there will be a potential decrease in college applications on the lower end of the data due to the recent year’s Covid pandemic. Policymakers could lower the cost of tuition if post-graduate earnings and the cost of tuition are correlated. For universities that are losing applicants, admissions could allocate money towards marketing, specifically printed materials, social media, and alums, to target more prospects who are likely to apply. The admissions could also find ways to streamline the admissions process. Technologists and Designers could use our information to target lower-income areas by improving their online programs. By learning the data about admission and the desired values students seek in the on-site college experience, they will be able to iterate their e-education system and potentially gain more students. Lastly, according to our data, top-ranking universities would bump up their rankings even more, causing a lower acceptance rate due to a more extensive application pool.
 
-### Limitations & Challenges
+## Limitations & Challenges
 
 When taking a look at the challenges & limitations of this project, we tried to dig deep into the data set itself and see how information was collected. What we found was that one of the main points of our project, which was the financial aspects of going to college, can be easily misinterpreted by our users. There are too many variables to list, but one example can be seen when we take a look at how the Revenue/Cost of the School is calculated by taking the tuition revenue minus discounts and allowances but then it only divides by full-time students (Undergraduate + Graduate).
 
@@ -54,15 +50,11 @@ Creating this database and interactive models even for just one group of users (
 
 It will be a challenge to create a final project that our team can proudly stand behind within a short amount of time. Cleaning the data, making sure there is correlation along with causation when we present the data, and creating an interface that is easy to use are all important and detail-oriented jobs.
 
-### Summary Information
+## Summary Information
 
-We included the Max and Min full-time retention rate and the universities with it (4 values here). The max full-time retention rate is "1" from the University of Florida, while the minimum is "0.8" from Florida International University, Arizona State University - Temple, and Georgia State University. We also included the Max and Min first generation rate's universities' names (2 values here). The university with the max first-generation rate is Florida International University, while the university with the min first-generation rate is the University of Illinois at Urbana-Champaign. As the first generation rate is part of the factor that we value college's diversity, with these 6 values, we are able to answer part of the research question: Do various quality of diversity traits correspond with the retention rate of students at a college? Also, paring with other data, these values will be able to give us a better overview of the individual colleges, therefore providing the prospective students a clearer outline to find the college that will align with their personal interests.
+We included the Max and Min full-time retention rate and the universities with it (4 values here). The max full-time retention rate is "1" from the University of Florida, while the minimum is "0.8" from Florida International University, Arizona State University - Temple, and Georgia State University. We also included the Max and Min first generation rate's universities' names (2 values here). The university with the max first-generation rate is Florida International University, while the university with the min first-generation rate is the University of Illinois at Urbana-Champaign. As the first generation rate is part of the factor that we value college's diversity, with these 6 values, we are able to answer part of the research question: Do various quality of diversity traits correspond with the retention rate of students at a college? Also, paring with other data, these values will be able to give us a better overview of the individual colleges, therefore providing the prospective students a clearer outline to find the college that will align with their personal interests. As a quick note, we've honed the list of colleges we've used down to the top 10 most attended colleges in the U.S.
 
-### Table
-
-Include a table of aggregate information
-
-Describe why you included the table and what information it reveals
+## Table
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(readr)
@@ -78,14 +70,22 @@ uni <- universityList %>%
   select("INSTNM", "TUITIONFEE_IN", "TUITIONFEE_OUT", "PAR_ED_PCT_1STGEN", "GRAD_DEBT_MDN", "RET_FT4", "TUITFTE") %>%
   group_by(INSTNM)
 
-knitr::kable(uni, "pipe", col.name = c("School Name", "In-State Tuition", "Out-Of-State Tuition", "Amount of First-Gen Students", "Median Post-Graduation Debt", "Retention Rate", "Revenue earned"))
+knitr::kable(uni, "pipe", col.name = c("School Name", "In-State Tuition (U.S. Dollars)", "Out-Of-State Tuition (U.S. Dollars)", "Amount of First-Gen Students", "Median Post-Graduation Debt (U.S. Dollars)", "Retention Rate", "Revenue earned (U.S. Dollars)"))
 ```
+#### Purpose
+We included this table as it includes all of the values, some calculated and some pulled directly from our dataset. These values allowed us to analyze and understand how expensive these schools are, how many students complete their degree, what proportion of first generation students attend these schools, and more.
 
-### Chart 1
+#### Insights
+* The University of Texas at Austin had the smallest proportion of first-generation students.
+  + This makes us curious. What factors (Social, Political, Economical) are potentially causing this to happen?
+* Georgia State University has the lowest retention rate of the schools on our list, meaning more students who attend this college will end up leaving before they finish their degree than at others.
+
+
+## Chart 1: Tuition Rates Across Colleges and their Proportionate Revenues
 
 The chart included is about the average college tuition in different schools. The y-axis is the different school names. The y-axis is the average price of tuition year in U.S. dollars. We also used different colors to differentiate different tuition types in each school.
 
-We chose this chart because we would like to know the cost of tution in different types of college and the differences between the source of the tuition in each college. This will help us to answer the question: will the cost of attending a college will differ in different types of college and how much will different types of tuition source differ (e.g. will in-state and out-off-state tuition differ extremely?).
+We chose this chart because we would like to know the cost of tuition in different types of college and the differences between the source of the tuition in each college. This will help us to answer the question: will the cost of attending a college will differ in different types of college and how much will different types of tuition source differ (e.g. will in-state and out-off-state tuition differ extremely?).
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library("tidyr")
@@ -94,29 +94,38 @@ library("ggplot2")
 library("readr")
 
 CollegeScorecard <- read_csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-tersaii/main/CollegeScorecard.csv")
-uni <- CollegeScorecard[c(3846, 740, 2327, 2996, 771, 762, 1067, 83, 924,3848), ] 
+universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
+                                     , 3849), ]
+
+uni <- subset(universityList,select = c('TUITIONFEE_IN', "TUITIONFEE_OUT", "INSTNM", "GRAD_DEBT_MDN", "RET_FT4", "RET_PT4", "TUITFTE"))
 
 uni <- uni %>% 
   mutate("TUITION_DIFF" = TUITIONFEE_OUT - TUITIONFEE_IN)
 
 tuition_type <- uni %>%
-  select(INSTNM, TUITIONFEE_IN, TUITIONFEE_OUT, TUITION_DIFF, TUITIONFEE_PROG, TUITFTE) %>% 
+  select(INSTNM, TUITIONFEE_IN, TUITIONFEE_OUT, TUITION_DIFF, TUITFTE) %>% 
   gather(key = "t_type", value = "cost", -INSTNM)
 
 ggplot(tuition_type) +
   geom_col(mapping = aes(x = INSTNM, y = cost, fill = t_type),
            position = "dodge") +
   scale_y_continuous(breaks = seq(0, 38000, 2000)) +
-  labs(title ="Average Tuition" , x = "School",
+  labs(title ="Average Tuition and the Revenue Each School Generates" , x = "School",
        y = "Average Price of Tuition/Year in U.S. Dollars") +
-  scale_fill_discrete(name = "Tution Type", labels = c("Revenue Made/Student", "In/Out-of-State Difference",
-                      "In-State", "Out-of-State", "Program")) +
+  scale_fill_discrete(name = "Tuition Type", labels = c("Revenue Made", "In/Out-of-State Difference",
+                                                       "In-State", "Out-of-State", "Program")) +
   guides(x = guide_axis(n.dodge = 5))
 ```
 
-### Chart 2
+#### Purpose
+This chart allows us to see the difference in Tuition rates for in-state and out-of-state Students as well as the difference between the two costs. It also highlights the cost for program-year students and finally, compares it against the revenue made back by the college.
 
-Describe why you chose this chart and what information it reveals
+#### Insights
+* University of Illinois makes more money back from student tuition than other colleges.
+* The University of Texas at Austin has the most expensive out-of-state tuition. 
+  + This could potentially represent a bias towards in-state students.
+
+### Chart 2
 
 The chart is about the correlation between Admission Rates and Retention Rates at each college. The x-axis is the college admission rate, and the y-axis is the retention rate. Each college represents a different college. We chose this chart because the student can foresee the retention rate for the college they picked and compare it with its admission rate (since usually admission rate represents a college's prestigiousness). For instance, if a student chooses a college with a low admission rate, however, it has a very high retention rate (e.g. University of Texas, Austin). It means it might not be worth it for students to go to that college because there might be a reason the students in that school chose to drop out that caused the retention rate to be high.
 
@@ -148,9 +157,21 @@ ggplot(admissions_ret, aes(x = ADM_RATE, y = RET_FT4, color = INSTNM)) +
   scale_x_continuous(breaks = seq(0, 1, 0.1))
 ```
 
-### Chart 3
+#### Purpose
 
-The chart compares different colleges' median student debt in U.S. dollars. The x-axis is the college names, and the y-axis is the values of median student debt in each college. The college with the highest student debt is Georgia State University, and the lowest is the University of Florida. We chose this chart because it is important for prospective college students to know the possible average college debt students will carry during and after college life. Many students really care about how much debt they still have to pay after college. Many students who chose a college with very little funds are still paying debts in their 40s and 50s. So it is important to know the average student debt for the college the prospective students are going to attend.
+The chart showcases the correlation between Admission and Retention Rates at each college. We chose this chart because the student can foresee the retention rate for the college they picked and compare it with its admission rate (since usually admission rate represents a college's prestigiousness). For instance, if a student chooses a college with a low admission rate, it has a very high retention rate (e.g., the University of Texas, Austin). It means it might not be worth it for students to go to that college because there might be a reason the students in that school chose to drop out that caused the retention rate to be high.
+
+#### Insights
+
+* University of Florida has the highest retention rate, while Georgia State University has the lowest.
+* Arizona State University-Tempe has the highest admission rate, while University of Texas at Austin has the lowest.
+* Though University of Texas at Austin has a very low admission rate, its retention rate is the second highest.
+* Arizona State University-Tempe is an outlier with the highest admission rate and relatively low retention rate (the third lowest).
+
+
+### Chart 3: Student Debt
+
+This chart compares different colleges' median student debt in U.S. dollars. The x-axis is the college names, and the y-axis is the values of median student debt in each college. The college with the highest student debt is Georgia State University, and the lowest is the University of Florida. We chose this chart because it is important for prospective college students to know the possible average college debt students will carry during and after college life. Many students really care about how much debt they still have to pay after college. Many students who chose a college with very little funds are still paying debts in their 40s and 50s. So it is important to know the average student debt for the college the prospective students are going to attend.
 
 
 ``````{r echo=FALSE, warning=FALSE, message=FALSE}
@@ -180,4 +201,14 @@ ggplot(grad_debt, aes(x=INSTNM, y=GRAD_DEBT_MDN)) +
   scale_x_discrete(guide = guide_axis(n.dodge=5))
 ```
 
+#### Purpose
+
+The chart compares different colleges' median student debt in U.S. dollars. We chose this chart because it is important for prospective college students to know the possible average college debt students will carry during and after college life. Many students really care about how much debt they still have to pay after college. Many students who chose a college with very little funds are still paying debts in their 40s and 50s. So it is important to know the average student debt for the college the prospective students are going to attend.
+
+#### Insights
+
+* The college with the highest student debt is Georgia State University, and the lowest is the University of Florida.
+* Ohio State University-Main Campus and Texas A & M University-College Station have the second highest student debt in terms of our chart.
+* Florida International University has the second lowest student debt in our chart.
+* The difference between the highest and lowest college debts is $7,867.5.
 
