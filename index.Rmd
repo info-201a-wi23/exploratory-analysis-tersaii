@@ -52,24 +52,21 @@ It will be a challenge to create a final project that our team can proudly stand
 
 ## Summary Information
 
-We included the Max and Min full-time retention rate and the universities with it (4 values here). The max full-time retention rate is "1" from the University of Florida, while the minimum is "0.8" from Florida International University, Arizona State University - Temple, and Georgia State University. We also included the Max and Min first generation rate's universities' names (2 values here). The university with the max first-generation rate is Florida International University, while the university with the min first-generation rate is the University of Illinois at Urbana-Champaign. As the first generation rate is part of the factor that we value college's diversity, with these 6 values, we are able to answer part of the research question: Do various quality of diversity traits correspond with the retention rate of students at a college? Also, paring with other data, these values will be able to give us a better overview of the individual colleges, therefore providing the prospective students a clearer outline to find the college that will align with their personal interests. As a quick note, we've honed the list of colleges we've used down to the top 10 most attended colleges in the U.S.
+```{r setup, include = FALSE}
+library("tidyr")
+library("dplyr")
+library("ggplot2")
+library("readr")
+library("RColorBrewer")
+source("UniversityDF.R")
+source("summary_information_script.R")
+```
+
+We included the Max and Min full-time retention rate and the universities with it (4 values here). The max full-time retention rate is `r summary_info$fulltime_rentention_max_value` from the `r summary_info$fulltime_rentention_max_uni`, while the minimum is `r summary_info$fulltime_rentention_min_value` from `r summary_info$fulltime_rentention_min_unis`. We also included the Max and Min first generation rate's universities' names (2 values here). The university with the max first-generation rate is `r summary_info$first_gen_max_value`, while the university with the min first-generation rate is the `r summary_info$first_gen_min_value`. As the first generation rate is part of the factor that we value college's diversity, with these 6 values, we are able to answer part of the research question: Do various quality of diversity traits correspond with the retention rate of students at a college? Also, paring with other data, these values will be able to give us a better overview of the individual colleges, therefore providing the prospective students a clearer outline to find the college that will align with their personal interests. As a quick note, we've honed the list of colleges we've used down to the top 10 most attended colleges in the U.S.
 
 ## Table
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-library(readr)
-library(dplyr)
-
-CollegeScorecard <- read_csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-tersaii/main/CollegeScorecard.csv")
-universityList <- CollegeScorecard[c(
-  3847, 741, 2328, 2997, 772, 763, 1068, 84, 925,
-  3849
-), ]
-
-uni <- universityList %>%
-  select("INSTNM", "TUITIONFEE_IN", "TUITIONFEE_OUT", "PAR_ED_PCT_1STGEN", "GRAD_DEBT_MDN", "RET_FT4", "TUITFTE") %>%
-  group_by(INSTNM)
-
 knitr::kable(uni, "pipe", col.name = c("School Name", "In-State Tuition (U.S. Dollars)", "Out-Of-State Tuition (U.S. Dollars)", "Amount of First-Gen Students", "Median Post-Graduation Debt (U.S. Dollars)", "Retention Rate", "Revenue earned (U.S. Dollars)"))
 ```
 #### Purpose
@@ -88,15 +85,6 @@ The chart included is about the average college tuition in different schools. Th
 We chose this chart because we would like to know the cost of tuition in different types of college and the differences between the source of the tuition in each college. This will help us to answer the question: will the cost of attending a college will differ in different types of college and how much will different types of tuition source differ (e.g. will in-state and out-off-state tuition differ extremely?).
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-library("tidyr")
-library("dplyr")
-library("ggplot2")
-library("readr")
-
-CollegeScorecard <- read_csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-tersaii/main/CollegeScorecard.csv")
-universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
-                                     , 3849), ]
-
 uni <- subset(universityList,select = c('TUITIONFEE_IN', "TUITIONFEE_OUT", "INSTNM", "GRAD_DEBT_MDN", "RET_FT4", "RET_PT4", "TUITFTE"))
 
 uni <- uni %>% 
@@ -130,17 +118,6 @@ This chart allows us to see the difference in Tuition rates for in-state and out
 The chart is about the correlation between Admission Rates and Retention Rates at each college. The x-axis is the college admission rate, and the y-axis is the retention rate. Each college represents a different college. We chose this chart because the student can foresee the retention rate for the college they picked and compare it with its admission rate (since usually admission rate represents a college's prestigiousness). For instance, if a student chooses a college with a low admission rate, however, it has a very high retention rate (e.g. University of Texas, Austin). It means it might not be worth it for students to go to that college because there might be a reason the students in that school chose to drop out that caused the retention rate to be high.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-library("tidyr")
-library("dplyr")
-library("ggplot2")
-library("readr")
-library("RColorBrewer")
-
-CollegeScorecard <- read_csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-tersaii/main/CollegeScorecard.csv")
-
-universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
-                                     , 3849), ]
-
 admissions_ret <- universityList %>% 
   select("INSTNM", "ADM_RATE", "RET_FT4")
    
@@ -174,19 +151,7 @@ The chart showcases the correlation between Admission and Retention Rates at eac
 This chart compares different colleges' median student debt in U.S. dollars. The x-axis is the college names, and the y-axis is the values of median student debt in each college. The college with the highest student debt is Georgia State University, and the lowest is the University of Florida. We chose this chart because it is important for prospective college students to know the possible average college debt students will carry during and after college life. Many students really care about how much debt they still have to pay after college. Many students who chose a college with very little funds are still paying debts in their 40s and 50s. So it is important to know the average student debt for the college the prospective students are going to attend.
 
 
-``````{r echo=FALSE, warning=FALSE, message=FALSE}
-library("tidyr")
-library("dplyr")
-library("ggplot2")
-library("readr")
-library("RColorBrewer")
-
-CollegeScorecard <- read_csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-tersaii/main/CollegeScorecard.csv")
-
-
-universityList <- CollegeScorecard[c(3847, 741, 2328, 2997, 772, 763, 1068, 84, 925
-                                     , 3849), ]
-
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 grad_debt <- universityList %>% 
   select("INSTNM", "GRAD_DEBT_MDN")
 
