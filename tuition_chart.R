@@ -22,4 +22,5 @@ ggplot(tuition_type) +
        y = "Average Price of Tuition/Year in U.S. Dollars") +
   scale_fill_discrete(name = "Tuition Type", labels = c("Revenue Made", "In/Out-of-State Difference",
                                                        "In-State", "Out-of-State", "Program")) +
-  guides(x = guide_axis(n.dodge = 5))
+  coord_flip() 
+
