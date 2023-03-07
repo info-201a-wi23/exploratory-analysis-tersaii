@@ -21,4 +21,4 @@ ggplot(grad_debt, aes(x=INSTNM, y=GRAD_DEBT_MDN)) +
        y = "Median Debt in U.S. Dollars"
     
   ) +
-  scale_x_discrete(guide = guide_axis(n.dodge=5))
+  coord_flip()
